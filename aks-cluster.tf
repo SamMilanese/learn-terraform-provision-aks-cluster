@@ -4,7 +4,10 @@
 resource "random_pet" "prefix" {}
 
 provider "azurerm" {
-  features {}
+    subscription_id = var.subscriptionID
+    tenant_id = var.tenantID
+
+    features {}
 }
 
 resource "azurerm_resource_group" "default" {
