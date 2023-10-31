@@ -20,10 +20,10 @@ resource "azurerm_resource_group" "default" {
 }
 
 resource "azurerm_kubernetes_cluster" "default" {
-  name                = "sm-aks"
+  name                = "sm-aks-cluster"
   location            = azurerm_resource_group.default.location
   resource_group_name = azurerm_resource_group.default.name
-  dns_prefix          = "sm-k8s"
+  dns_prefix          = "sm-test-k8s"
   kubernetes_version  = "1.26.3"
 
   default_node_pool {
